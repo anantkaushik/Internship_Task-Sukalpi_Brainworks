@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Twitter Search</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Timmana" rel="stylesheet">
+</head>
+<body>
+	<div id="box">
+			<h2 id="head1" >
+				<p class="title">Enter Twitter Handle :
+					<form method="POST" action="{{ url_for('retrieve') }}">
+						<input type="text" name="handle" placeholder="Enter Twitter Handle"><br>
+						<input type="submit" id="btn" value="Check"><br>
+					</form>
+				</p>
+			</h2>
+		<div>
+			{% if invalid_handle=='0' %}
+				<p  class="p1" >{{f_count|safe}}</p>
+				<p  class="p1" >{{S_count|safe}}</p>
+				<p  class="p1" >{{last_status|safe}}</p>
+			{% else %}
+				<p  class="p2" >{{invalid_handle|safe}}</p>
+			{% endif %}
+		</div>
+	</div>
+</body>
+</html>
