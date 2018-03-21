@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, render_template, request, jsonify
 import sqlite3 as sql
 app = Flask(__name__)
-con = sql.connect('Task3.db')                              #Connection to DB
+con = sql.connect('Task2.db')                              #Connection to DB
 cur = con.cursor()
 
 @app.route('/')
